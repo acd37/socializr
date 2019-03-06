@@ -4,8 +4,28 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
+import { getCurrentProfile } from '../../actions/profileActions';
 
 class Navbar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            handle: ''
+        };
+    }
+
+    componentDidMount() {
+        this.props.getCurrentProfile();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.profile.profile) {
+            this.setState({
+                handle: nextProps.profile.profile.handle
+            });
+        }
+    }
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.clearCurrentProfile();
@@ -14,24 +34,43 @@ class Navbar extends Component {
 
     render() {
         const { isAuthenticated, user } = this.props.auth;
+        const { handle } = this.state;
 
         const authLinks = (
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
+                <li className="nav-item dropdown">
                     <a
                         href="#"
-                        onClick={this.onLogoutClick}
-                        className="nav-link"
+                        className="nav-link dropdown-toggle"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
                     >
+                        {handle}{' '}
                         <img
+                            id="navbarDropdown"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
                             style={{ width: 25, marginRight: 5 }}
                             className="rounded-circle"
                             src={user.avatar}
                             alt={user.name}
                             title="You must have a gravatar connected to your email to display an image"
-                        />{' '}
-                        Logout
+                        />
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a
+                            href="#"
+                            onClick={this.onLogoutClick}
+                            className="dropdown-item"
+                        >
+                            Logout
+                        </a>
+                    </div>
                 </li>
             </ul>
         );
@@ -69,6 +108,11 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="mobile-nav">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
+                                <Link className="nav-link" to="/dashboard">
+                                    Dashboard
+                                </Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/profiles">
                                     {' '}
                                     Book Nerds
@@ -90,10 +134,11 @@ Navbar.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    auth: state.auth
+    auth: state.auth,
+    profile: state.profile
 });
 
 export default connect(
     mapStateToProps,
-    { logoutUser, clearCurrentProfile }
+    { logoutUser, clearCurrentProfile, getCurrentProfile }
 )(Navbar);
