@@ -59,6 +59,16 @@ img {
     color: #ff4757;
 }
 
+.absolute-icon {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+.badge-light {
+    background-color: transparent;
+}
+
 .btn-light {
     background-color: #dfe4ea;
     border-color: #dfe4ea;
@@ -89,10 +99,27 @@ img {
     border-color: #ff4757;
 }
 
+.btn-delete {
+    padding: 5px 10px;
+}
+
 .bg-dark {
     background-color: #2f3542 !important;
 }
 
+.bg-primary {
+    background-color: #70a1ff !important;
+}
+
 .form-control {
     border-radius: 0;
+}
+
+.card,
+.card-header {
+    border-radius: 0 !important;
+}
+
+.card-header {
+    border-color: #70a1ff !important;
 }

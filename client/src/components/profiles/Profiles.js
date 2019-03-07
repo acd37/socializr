@@ -35,7 +35,7 @@ class Profiles extends Component {
                                 {' '}
                                 Book Nerd Profiles
                             </h1>
-                            <p className="lead text-center">
+                            <p className="lead">
                                 Browse and connect with other book nerds.
                             </p>
                             {profileItems}

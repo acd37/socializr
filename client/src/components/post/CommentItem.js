@@ -15,7 +15,7 @@ class CommentItem extends Component {
         return (
             <div className="card card-body mb-3">
                 <div className="row">
-                    <div className="col-md-2">
+                    <div className="col-md-1">
                         <a href="profile.html">
                             <img
                                 className="rounded-circle d-none d-md-block"
@@ -23,23 +23,19 @@ class CommentItem extends Component {
                                 alt="avatar"
                             />
                         </a>
-                        <br />
-                        <p className="text-center">{comment.name}</p>
                     </div>
-                    <div className="col-md-10">
-                        <p className="lead">{comment.text}</p>
+                    <div className="col-md-11">
+                        <p className="text-muted">{comment.name}</p>
+                        <p>{comment.text}</p>
                         {comment.user === auth.user.id ? (
-                            <button
+                            <i
                                 onClick={this.onDeleteClick.bind(
                                     this,
                                     postId,
                                     comment._id
                                 )}
-                                type="button"
-                                className="btn btn-danger mr-1"
-                            >
-                                <i className="fas fa-times" />
-                            </button>
+                                className="fas fa-trash delete-icon absolute-icon"
+                            />
                         ) : null}
                     </div>
                 </div>

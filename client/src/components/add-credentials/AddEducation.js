@@ -103,7 +103,7 @@ class AddEducation extends Component {
                                     onChange={this.onChange}
                                     error={errors.field}
                                 />
-                                <h6>* From Date</h6>
+                                <h6>* From </h6>
                                 <TextFieldGroup
                                     name="from"
                                     type="date"
@@ -111,7 +111,7 @@ class AddEducation extends Component {
                                     onChange={this.onChange}
                                     error={errors.from}
                                 />
-                                <h6>From Date</h6>
+                                <h6>To </h6>
                                 <TextFieldGroup
                                     name="to"
                                     type="date"
@@ -150,7 +150,7 @@ class AddEducation extends Component {
                                 <input
                                     type="submit"
                                     value="Submit"
-                                    className="btn btn-info btn-block"
+                                    className="btn btn-primary btn-block"
                                 />
                             </form>
                         </div>

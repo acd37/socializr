@@ -7,7 +7,17 @@ class CommentFeed extends Component {
         const { comments, postId } = this.props;
 
         return comments.map(comment => (
-            <CommentItem key={comment._id} comment={comment} postId={postId} />
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-10 m-auto">
+                        <CommentItem
+                            key={comment._id}
+                            comment={comment}
+                            postId={postId}
+                        />
+                    </div>
+                </div>
+            </div>
         ));
     }
 }

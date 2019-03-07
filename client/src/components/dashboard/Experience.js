@@ -23,12 +23,7 @@ class Experience extends Component {
                     )}
                 </td>
                 <td>
-                    {/* <button
-                        onClick={this.onDeleteClick.bind(this, expItem._id)}
-                        className="btn btn-outline-danger"
-                    > */}
                     <i className="fas fa-trash delete-icon" />
-                    {/* </button> */}
                 </td>
             </tr>
         ));
