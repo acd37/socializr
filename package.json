@@ -1,6 +1,9 @@
 {
     "name": "socializr",
     "version": "1.0.0",
+    "engines": {
+        "node": "8.10.0"
+    },
     "description": "Social network",
     "main": "server.js",
     "scripts": {
