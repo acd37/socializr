@@ -274,13 +274,12 @@ class EditProfile extends Component {
                                 >
                                     Add Social Network Links
                                 </button>
-                                <span className="text-muted">Optional</span>
                             </div>
                             {socialInputs}
                             <input
                                 type="submit"
                                 value="Save Updates"
-                                className="btn btn-info btn-block mt-4"
+                                className="btn btn-primary btn-block mt-4"
                             />
                         </form>
                     </div>

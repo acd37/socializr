@@ -24,12 +24,12 @@ class Education extends Component {
                     )}
                 </td>
                 <td>
-                    <button
+                    {/* <button
                         onClick={this.onDeleteClick.bind(this, eduItem._id)}
                         className="btn btn-danger"
-                    >
-                        Delete
-                    </button>
+                    > */}
+                    <i className="fas fa-trash delete-icon" />
+                    {/* </button> */}
                 </td>
             </tr>
         ));

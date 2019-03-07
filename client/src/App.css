@@ -4,7 +4,7 @@ img {
 
 .landing {
     position: relative;
-    background: url('./img/showcase.jpg') no-repeat;
+    background: url('./img/showcase.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -34,6 +34,65 @@ img {
     height: 40px;
 }
 
+.name-link {
+    text-decoration: none !important;
+}
+
+/* bootstrap overrides */
+
 .form-control::placeholder {
     color: #bbb !important;
+}
+
+.btn {
+    padding: 5px 30px;
+    border-radius: 1px;
+}
+
+.delete-icon {
+    font-size: 14px;
+    color: #ff6b81;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    color: #ff4757;
+}
+
+.btn-light {
+    background-color: #dfe4ea;
+    border-color: #dfe4ea;
+}
+
+.btn-light:hover {
+    background-color: #ced6e0;
+    border-color: #ced6e0;
+}
+
+.btn-primary {
+    background-color: #70a1ff;
+    border-color: #70a1ff;
+}
+
+.btn-primary:hover {
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+}
+
+.btn-danger {
+    background-color: #ff6b81;
+    border-color: #ff6b81;
+}
+
+.btn-danger:hover {
+    background-color: #ff4757;
+    border-color: #ff4757;
+}
+
+.bg-dark {
+    background-color: #2f3542 !important;
+}
+
+.form-control {
+    border-radius: 0;
 }
