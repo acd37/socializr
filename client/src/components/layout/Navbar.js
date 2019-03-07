@@ -62,7 +62,10 @@ class Navbar extends Component {
                             title="You must have a gravatar connected to your email to display an image"
                         />
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div
+                        className="dropdown-menu"
+                        aria-labelledby="navbarDropdown"
+                    >
                         <a
                             href="#"
                             onClick={this.onLogoutClick}
@@ -70,6 +73,9 @@ class Navbar extends Component {
                         >
                             Logout
                         </a>
+                        <Link className="dropdown-item" to="/dashboard">
+                            Dashboard
+                        </Link>
                     </div>
                 </li>
             </ul>
@@ -108,14 +114,14 @@ class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="mobile-nav">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/dashboard">
-                                    Dashboard
-                                </Link>
-                            </li>
-                            <li className="nav-item">
                                 <Link className="nav-link" to="/profiles">
                                     {' '}
                                     Book Nerds
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/feed">
+                                    Feed
                                 </Link>
                             </li>
                         </ul>

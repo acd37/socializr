@@ -1,4 +1,5 @@
-module.exports = {
-  mongoURI: 'mongodb://acd37:password1@ds237574.mlab.com:37574/socializr',
-  secretOrKey: 'YXNkZjc4MHFuYjkwM25mZHMsZjsnS0QyXTQwMjM4SDRCU0RBRlNORE0zMTk='
-};
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys_prod');
+} else {
+    module.exports = require('./keys_dev');
+}
