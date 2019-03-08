@@ -3,18 +3,33 @@ import { Link } from 'react-router-dom';
 
 const ProfileActions = () => {
     return (
-        <div className="btn-group mb-4" role="group">
-            <Link to="/edit-profile" className="btn btn-light mr-3">
-                <i className="fas fa-user-circle mr-1" /> Edit Profile
-            </Link>
-            <Link to="/add-experience" className="btn btn-light mr-3">
-                <i className="fab fa-black-tie mr-1" />
-                Add Experience
-            </Link>
-            <Link to="/add-education" className="btn btn-light">
-                <i className="fas fa-graduation-cap mr-1" />
-                Add Education
-            </Link>
+        <div className="row mb-4">
+            <div className="col-md-4">
+                <Link
+                    to="/edit-profile"
+                    className="btn btn-light btn-block mb-1"
+                >
+                    <i className="fas fa-user-circle mr-1" /> Edit Profile
+                </Link>
+            </div>
+            <div className="col-md-4">
+                <Link
+                    to="/add-experience"
+                    className="btn btn-light btn-block mb-1"
+                >
+                    <i className="fab fa-black-tie mr-1" />
+                    Add Experience
+                </Link>
+            </div>
+            <div className="col-md-4">
+                <Link
+                    to="/add-education"
+                    className="btn btn-light btn-block mb-1"
+                >
+                    <i className="fas fa-graduation-cap mr-1" />
+                    Add Education
+                </Link>
+            </div>
         </div>
     );
 };
