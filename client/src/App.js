@@ -27,6 +27,7 @@ import Profile from './components/profile/Profile';
 import NotFound from './components/not-found/NotFound';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
+import AddBook from './components/add-book/AddBook';
 
 // check for token
 if (localStorage.socializr) {
@@ -110,6 +111,13 @@ class App extends Component {
                                     exact
                                     path="/add-education"
                                     component={AddEducation}
+                                />
+                            </Switch>
+                            <Switch>
+                                <PrivateRoute
+                                    exact
+                                    path="/add-book"
+                                    component={AddBook}
                                 />
                             </Switch>
                             <Switch>

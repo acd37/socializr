@@ -38,6 +38,12 @@ img {
     text-decoration: none !important;
 }
 
+.bookshelf {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 186px);
+}
+
 /* bootstrap overrides */
 
 .form-control::placeholder {
@@ -122,4 +128,15 @@ img {
 
 .card-header {
     border-color: #70a1ff !important;
+}
+
+.book-title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.book-text {
+    font-size: 12px;
+    font-style: italic;
 }

@@ -6,7 +6,7 @@ const passport = require('passport');
 const validateProfileInput = require('../../validation/profile');
 const validateExperienceInput = require('../../validation/experience');
 const validateEducationInput = require('../../validation/education');
-
+const validateBookInput = require('../../validation/bookshelf');
 // Load profile model
 const Profile = require('../../models/Profile');
 
@@ -310,6 +310,69 @@ router.delete(
             User.findOneAndRemove({ _id: req.user.id }).then(() =>
                 res.json({ success: true })
             );
+        });
+    }
+);
+
+// @route   POST api/profile/bookshelf
+// @desc    Add book to a user's bookshelf
+// @access  Private
+router.post(
+    '/bookshelf',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validateBookInput(req.body);
+
+        // check validation
+        if (!isValid) {
+            // return any errors with 400 status
+            return res.status(400).json(errors);
+        }
+
+        Profile.findOne({ user: req.user.id }).then(profile => {
+            const newBook = {
+                title: req.body.title,
+                author: req.body.author,
+                publisher: req.body.publisher,
+                publishedDate: req.body.publishedDate,
+                description: req.body.description,
+                isbn10: req.body.isbn10,
+                isbn13: req.body.isbn13,
+                pageCount: req.body.pageCount,
+                averageRating: req.body.averageRating,
+                thumbnail: req.body.thumbnail
+            };
+
+            console.log(newBook);
+            // Add to experience array in profile
+            profile.bookshelf.unshift(newBook);
+
+            profile.save().then(profile => res.json(profile));
+        });
+    }
+);
+
+// @route   DELETE api/profile/education/:edu_id
+// @desc    Delete education from profile
+// @access  Private
+router.delete(
+    '/bookshelf/:book_id',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id }).then(profile => {
+            // Get remove index
+            const removeIndex = profile.bookshelf
+                .map(item => item.id)
+                .indexOf(req.params.book_id);
+
+            // splice item from array
+            profile.bookshelf.splice(removeIndex, 1);
+
+            // save
+            profile
+                .save()
+                .then(profile => res.json(profile))
+                .catch(err => res.status(404).json(err));
         });
     }
 );

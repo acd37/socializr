@@ -60,7 +60,7 @@ class PostItem extends Component {
                                         className={classnames(
                                             'fas fa-thumbs-up',
                                             {
-                                                'text-info': this.findUserLike(
+                                                'text-primary': this.findUserLike(
                                                     post.likes
                                                 )
                                             }

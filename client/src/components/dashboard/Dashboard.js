@@ -7,6 +7,7 @@ import Spinner from '../common/Spinner';
 import ProfileActions from './ProfileActions';
 import Experience from './Experience';
 import Education from './Education';
+import Bookshelf from './Bookshelf';
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -42,9 +43,7 @@ class Dashboard extends Component {
                         <ProfileActions />
                         <Experience experience={profile.experience} />
                         <Education education={profile.education} />
-
-                        {/* TODO: exp and edu */}
-
+                        <Bookshelf bookshelf={profile.bookshelf} />
                         <div style={{ marginBottom: 60 }} />
                         <button
                             onClick={this.onDeleteClick}
@@ -65,7 +64,7 @@ class Dashboard extends Component {
                         </p>
                         <Link
                             to="/create-profile"
-                            className="btn btn-lg- btn-info"
+                            className="btn btn-lg- btn-primary"
                         >
                             Create Profile
                         </Link>
@@ -89,7 +88,7 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
-    deleteACcount: PropTypes.func.isRequired,
+    deleteAccount: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired
 };

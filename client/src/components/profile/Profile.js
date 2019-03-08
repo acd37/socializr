@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ProfileHeader from './ProfileHeader';
 import ProfileAbout from './ProfileAbout';
 import ProfileCreds from './ProfileCreds';
+import ProfileBookshelf from './ProfileBookshelf';
 import Spinner from '../common/Spinner';
 import { getProfileByHandle } from '../../actions/profileActions';
 
@@ -47,6 +48,7 @@ class Profile extends Component {
                         education={profile.education}
                         experience={profile.experience}
                     />
+                    <ProfileBookshelf bookshelf={profile.bookshelf} />
                 </div>
             );
         }
