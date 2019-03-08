@@ -1,4 +1,4 @@
-# EarnIt
+# Socializr
 
 ## Contributors
 * @acd37
