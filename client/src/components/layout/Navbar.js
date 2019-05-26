@@ -38,6 +38,17 @@ class Navbar extends Component {
 
         const authLinks = (
             <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                    <Link className="nav-link" to="/profiles">
+                        {' '}
+                        Book Nerds
+                                </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/feed">
+                        Feed
+                                </Link>
+                </li>
                 <li className="nav-item dropdown">
                     <a
                         href="#"
@@ -113,17 +124,7 @@ class Navbar extends Component {
 
                     <div className="collapse navbar-collapse" id="mobile-nav">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/profiles">
-                                    {' '}
-                                    Book Nerds
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/feed">
-                                    Feed
-                                </Link>
-                            </li>
+
                         </ul>
 
                         {isAuthenticated ? authLinks : guestLinks}

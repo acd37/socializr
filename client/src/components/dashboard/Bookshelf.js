@@ -18,7 +18,7 @@ class BookShelf extends Component {
                 >
                     <small>(delete)</small>
                 </p>
-                <img src={book.thumbnail} />
+                <img src={book.thumbnail} alt="thumbnail" />
                 <p className="text-center book-title">{book.title}</p>
                 <p className="text-center book-text">{book.author}</p>
 

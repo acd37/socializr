@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import isEmpty from '../../validation/is-empty';
 
 class ProfileAbout extends Component {
@@ -28,8 +27,8 @@ class ProfileAbout extends Component {
                                     bio.
                                 </span>
                             ) : (
-                                <span>{profile.bio}</span>
-                            )}
+                                    <span>{profile.bio}</span>
+                                )}
                         </p>
                         <hr />
                         <h3 className="text-center">Skill Set</h3>

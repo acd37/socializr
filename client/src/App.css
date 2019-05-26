@@ -140,3 +140,10 @@ img {
     font-size: 12px;
     font-style: italic;
 }
+
+
+.test-text {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #999;
+}

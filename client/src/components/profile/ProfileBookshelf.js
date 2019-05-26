@@ -4,7 +4,7 @@ class ProfileBookshelf extends Component {
     render() {
         const bookshelf = this.props.bookshelf.map(book => (
             <div key={book._id} style={{ maxWidth: 100 }}>
-                <img src={book.thumbnail} />
+                <img src={book.thumbnail} alt="thumbnail" />
                 <p className="text-center book-title">{book.title}</p>
                 <p className="text-center book-text">{book.author}</p>
                 <p className="text-center">{book.averageRating}</p>

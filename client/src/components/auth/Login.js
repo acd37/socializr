@@ -61,6 +61,9 @@ class Login extends Component {
                             <p className="lead text-center">
                                 Sign in to your Socializr account
                             </p>
+
+
+
                             <form onSubmit={this.onSubmit}>
                                 <TextFieldGroup
                                     placeholder="Email Address"
@@ -83,6 +86,13 @@ class Login extends Component {
                                     className="btn btn-primary btn-block mt-4"
                                 />
                             </form>
+                            <div className="test-text">
+                                Just want to check it out? Login in with the following credentials:
+                                <ul>
+                                    <li>Username: johndoe@gmail.com</li>
+                                    <li>Password: password</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

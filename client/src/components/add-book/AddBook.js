@@ -75,7 +75,7 @@ class AddBook extends Component {
         };
 
         $.ajax(settings).done(
-            function(data) {
+            function (data) {
                 console.log(data);
 
                 if (data.totalItems > 0) {
@@ -90,33 +90,33 @@ class AddBook extends Component {
                         : (bookObj.author = '');
                     data.items[0].volumeInfo.publisher
                         ? (bookObj.publisher =
-                              data.items[0].volumeInfo.publisher)
+                            data.items[0].volumeInfo.publisher)
                         : (bookObj.publisher = '');
                     data.items[0].volumeInfo.publishedDate
                         ? (bookObj.publishedDate =
-                              data.items[0].volumeInfo.publishedDate)
+                            data.items[0].volumeInfo.publishedDate)
                         : (bookObj.publishedDate = '');
                     data.items[0].volumeInfo.description
                         ? (bookObj.description =
-                              data.items[0].volumeInfo.description)
+                            data.items[0].volumeInfo.description)
                         : (bookObj.description = '');
                     data.items[0].volumeInfo.industryIdentifiers[1]
                         ? (bookObj.isbn10 =
-                              data.items[0].volumeInfo.industryIdentifiers[1].identifier)
+                            data.items[0].volumeInfo.industryIdentifiers[1].identifier)
                         : (bookObj.isbn10 = '');
                     data.items[0].volumeInfo.industryIdentifiers[0].identifier
                         ? (bookObj.isbn13 =
-                              data.items[0].volumeInfo.industryIdentifiers[0].identifier)
+                            data.items[0].volumeInfo.industryIdentifiers[0].identifier)
                         : (bookObj.isbn13 = '');
-                    data.items[0].volumeInfo.pageCount.toString()
+                    data.items[0].volumeInfo.pageCount
                         ? (bookObj.pageCount = data.items[0].volumeInfo.pageCount.toString())
                         : (bookObj.pageCount = '');
-                    data.items[0].volumeInfo.averageRating.toString()
+                    data.items[0].volumeInfo.averageRating
                         ? (bookObj.averageRating = data.items[0].volumeInfo.averageRating.toString())
                         : (bookObj.averageRating = '');
                     data.items[0].volumeInfo.imageLinks.smallThumbnail
                         ? (bookObj.smallThumbnail =
-                              data.items[0].volumeInfo.imageLinks.smallThumbnail)
+                            data.items[0].volumeInfo.imageLinks.smallThumbnail)
                         : (bookObj.smallThumbnail = '');
 
                     this.setState({
@@ -154,7 +154,7 @@ class AddBook extends Component {
                                 Add books to your bookshelf
                             </p>
                             <h3> Search </h3>
-                            <p className="lead ">Searchs Search</p>Search
+
                             <TextFieldGroup
                                 placeholder="ISBN-10 or ISBN-13..."
                                 name="searchParameter"

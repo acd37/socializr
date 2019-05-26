@@ -12,12 +12,12 @@ const initialState = {
     loading: false
 };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
     switch (action.type) {
         case DELETE_POST:
             return {
                 ...state,
-                posts: state.posts.filter(post => post._id != action.payload)
+                posts: state.posts.filter(post => post._id !== action.payload)
             };
         case POST_LOADING:
             return {
